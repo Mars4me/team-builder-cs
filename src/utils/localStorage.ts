@@ -1,40 +1,36 @@
-type LocalStorageData = [] |  [[],[]] | 
+type LocalStorageData = [] | [[], []] | [string[], string[]] | string[];
+type LocalStorageReturnData = string | null;
+type InitTeamsReturnData = [string[], string[]] | [[], []];
+type InitPlayersReturnData = [] | string[];
 export class LocalStorageService {
-    static initPlayers() {
-        if (typeof window !== 'undefined') {
-            return JSON.parse(localStorage.getItem('playerList') || '[]');
-        }
+    static initPlayers(): InitPlayersReturnData {
+        const item = this.getItemFromLocalStorage('playerList');
 
-        return [];
+        return item ? JSON.parse(item) : [];
     }
 
-    static initTeams() {
-        if (typeof window !== 'undefined') {
-            return JSON.parse(localStorage.getItem('teams') || '[[],[]]');
-        }
-        return [[], []];
+    static initTeams(): InitTeamsReturnData {
+        const item = this.getItemFromLocalStorage('teams');
+
+        return item ? JSON.parse(item) : [[], []];
     }
 
-    static setPlayers(players: Array<string>) {
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('playerList', JSON.stringify(players));
-        }
+    static setPlayers(players: string[]) {
+        this.setItemToLocalStorage('playerList', players);
     }
 
     static setTeams(teams: [string[], string[]]) {
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('teams', JSON.stringify(teams));
-        }
+        this.setItemToLocalStorage('teams', teams);
     }
 
-    private static getItemFromLocalStorage(key: string) {
+    private static getItemFromLocalStorage(key: string): LocalStorageReturnData {
         if (typeof window !== 'undefined') {
             return localStorage.getItem(key);
         }
         return null;
     }
 
-    private static setItemToLocalStorage(key: string, data: LocalStorageUnits) {
+    private static setItemToLocalStorage(key: string, data: LocalStorageData) {
         if (typeof window !== 'undefined') {
             localStorage.setItem(key, JSON.stringify(data));
         }

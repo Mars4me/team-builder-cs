@@ -60,6 +60,8 @@ export default function BuilderPage() {
                 />
             </form>
 
+            <div className="-z-10 absolute top-0 sm:top-[8%] left-0 sm:left-[35%] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] " />
+
             <div className="grid w-full pt-8 pb-6 mt-4 text-center border-gray-300 md:mt-0 lg:mb-0 sm:w-fit sm:grid-cols-3 lg:grid-cols-5 lg:text-left bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
                 {playerList.map((player, index) => (
                     <button
