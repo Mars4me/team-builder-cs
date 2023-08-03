@@ -29,8 +29,7 @@ export default function Index() {
                     <div className="w-full">
                         <h1 className="text-5xl font-bold dark:text-gray-200">Terms of Service</h1>
                         <h2 className="px-6 pt-6 pb-12 text-xl leading-relaxed dark:text-gray-300 sm:px-24">
-                            If you have any questions, please{' '}
-                            <a href="mailto:support@axiom.co">get in touch.</a>
+                            If you have any questions, please <a href="mailto:test.test">get in touch.</a>
                         </h2>
                     </div>
                 </div>
