@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+// import { MetadataRoute } from 'next';
 // import { meta } from '@/data/constants';
 
 // https://en.wikipedia.org/wiki/Robots.txt#Standard
