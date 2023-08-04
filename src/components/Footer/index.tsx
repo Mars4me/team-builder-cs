@@ -17,7 +17,7 @@ export const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <div className="sm:mt-10 mt-4 flex items-center justify-center w-full px-4  dark:bg-[#09101F] md:pt-24 border-t dark:border-gray-200 border-gray-800">
+        <div className="mt-4 flex items-center justify-center w-full px-4  dark:bg-[#09101F] md:pt-12 border-t dark:border-gray-200 border-gray-800">
             <div className="container px-4 mx-auto">
                 {/* 
           Main Grid on Larger Screens, hidden on small screens
