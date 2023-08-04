@@ -17,7 +17,6 @@ export const MarsLogo = ({ width, height, viewBox }: MarsLogoProps) => {
             width={width}
             height={height}
             viewBox={viewBox || '55 55 400 400'}
-            enable-background="new 0 0 400 400"
         >
             <g>
                 <g>
