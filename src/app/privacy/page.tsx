@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     // },
 };
 
-export default function Index() {
+export default function PrivacyPage() {
     return (
         <div className="max-w-4xl p-2 mx-auto">
             <div className="mb-8 prose prose-lg break-words max-w-none dark:prose-invert prose-a:text-blue-700 prose-a:no-underline hover:prose-a:text-blue-500 dark:prose-a:text-blue-300 dark:hover:prose-a:text-blue-500">

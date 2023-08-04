@@ -3,58 +3,7 @@
 import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
 import { MarsLogo } from '../MarsLogo';
-
-const footerItems = {
-    resources: [
-        { path: '/', name: 'Documentation', internal: true },
-        { path: '/', name: 'Support', internal: true },
-        { path: '/', name: 'Contact Us', internal: true },
-    ],
-    legal: [
-        { name: 'Privacy Policy', path: '/privacy', internal: true },
-        { name: 'Cookies', path: '/cookies', internal: true },
-        { name: 'Terms of Service', path: '/terms', internal: true },
-    ],
-    app: [
-        { name: 'Home', path: '/', internal: true },
-        { name: 'Builder', path: '/builder', internal: true },
-        { name: 'Teams', path: '/teams', internal: true },
-    ],
-};
-// { name: 'Github', path: 'https://github.com/Mars4me', internal: false }
-
-type Data = {
-    page: {
-        id: string;
-        name: string;
-        url: string;
-        time_zone: string;
-        updated_at: string;
-    };
-    components: [
-        {
-            id: string;
-            name: string;
-            status: string;
-            created_at: string;
-            updated_at: string;
-            position: number;
-            description: string | null;
-            showcase: boolean;
-            start_date: string;
-            group_id: null;
-            page_id: string;
-            group: boolean;
-            only_show_if_degraded: boolean;
-        }
-    ];
-    incidents: [];
-    scheduled_maintenances: [];
-    status: {
-        indicator: string;
-        description: string;
-    };
-};
+import { footerItems } from '@/data/constants';
 
 export const Footer = () => {
     const panelLinks =
