@@ -6,7 +6,7 @@ export default function NotFound() {
     return (
         <>
             <h2>Not Found</h2>
-            <p>Could not find requested resouf:\next13-TS\nextjs-13-ready-to-seo\app\manifest.tsrce</p>
+            <p>Could not find requested </p>
         </>
     );
 }
