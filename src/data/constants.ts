@@ -58,8 +58,8 @@ export const meta: Meta = {
 
 export const menuItems = [
     { path: '/', name: 'Home', new: false },
-    { path: '/about', name: 'About', new: false },
-    { path: '/blog', name: 'Blog', new: true },
+    { path: '/builder', name: 'Builder', new: false },
+    { path: '/teams', name: 'Teams', new: true },
 ];
 
 export const footerItems = {
