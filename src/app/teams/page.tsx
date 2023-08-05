@@ -11,9 +11,8 @@ export const metadata: Metadata = {
 // const getItemsFromFakeDB = () => new Promise((res) => setTimeout(() => res('fafaf'), 3000));
 
 export default async function Teams() {
-    //testing loader
+    // testing loader
     // const getItems = await getItemsFromFakeDB();
-
     return (
         <>
             <NoSSRWrapper>
