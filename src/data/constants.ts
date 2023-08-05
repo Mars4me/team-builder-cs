@@ -64,9 +64,9 @@ export const menuItems = [
 
 export const footerItems = {
     resources: [
-        { path: '/', name: 'Documentation', internal: true },
-        { path: '/', name: 'Support', internal: true },
-        { path: '/', name: 'Contact Us', internal: true },
+        { path: '/', name: 'test', internal: true },
+        { path: '/', name: 'test2', internal: true },
+        { path: '/', name: 'test3', internal: true },
     ],
     legal: [
         { name: 'Privacy Policy', path: '/privacy', internal: true },
