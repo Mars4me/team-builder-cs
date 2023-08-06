@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import { LocalStorageService } from '@/utils/localStorage';
 import { changePlayerInTeam, copyToClipboard, teamShuffler } from '@/utils/teamShuffler';
 import Stack from '@/UI/Stack';
+import { StackItem } from '@/UI/Stack/StackItem';
 
 export default function Teams() {
     const [teams, setTeams] = useState<[string[], string[]]>(() => LocalStorageService.initTeams());
@@ -66,25 +67,23 @@ export default function Teams() {
             <section className="flex flex-col w-full gap-4 p-1 sm:w-fit drop-shadow-lg lg:gap-10">
                 <Stack className="rounded-lg">
                     {teams[0].map((playerName, index) => (
-                        <button
-                            onClick={() => handlePlayerShuffle(playerName)}
-                            className="px-5 py-4 text-center border border-transparent rounded-lg cursor-pointer hover:border-gray-300 hover:bg-red-100 hover:dark:border-neutral-700 hover:dark:bg-red-800/30"
+                        <StackItem
                             key={playerName + index}
-                        >
-                            {playerName}
-                        </button>
+                            playerName={playerName}
+                            index={index}
+                            onClick={() => handlePlayerShuffle(playerName)}
+                        />
                     ))}
                 </Stack>
 
                 <Stack className="rounded-lg">
                     {teams[1].map((playerName, index) => (
-                        <button
-                            onClick={() => handlePlayerShuffle(playerName)}
-                            className="px-5 py-4 border border-transparent rounded-lg cursor-pointer hover:border-gray-300 hover:bg-red-100 hover:dark:border-neutral-700 hover:dark:bg-red-800/30"
+                        <StackItem
                             key={playerName + index}
-                        >
-                            {playerName}
-                        </button>
+                            playerName={playerName}
+                            index={index}
+                            onClick={() => handlePlayerShuffle(playerName)}
+                        />
                     ))}
                 </Stack>
             </section>
