@@ -7,11 +7,11 @@ export const metadata: Metadata = {
     description: 'teams divider page',
 };
 
-//testing loader
+// for test
 // const getItemsFromFakeDB = () => new Promise((res) => setTimeout(() => res('fafaf'), 3000));
 
 export default async function Teams() {
-    // testing loader
+    // for test
     // const getItems = await getItemsFromFakeDB();
     return (
         <>
