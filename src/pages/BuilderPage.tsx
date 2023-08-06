@@ -1,5 +1,6 @@
 'use client';
 
+import ShuffleIcon from '@/UI/ShuffleIcon';
 import { LocalStorageService } from '@/utils/localStorage';
 import { teamShuffler } from '@/utils/teamShuffler';
 import Image from 'next/image';
@@ -31,6 +32,10 @@ export default function BuilderPage() {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        if (value === '') {
+            return;
+        }
+
         const newPlayerList = playerList.concat(value);
 
         setPlayerList(newPlayerList);
@@ -79,16 +84,10 @@ export default function BuilderPage() {
                 href="/teams"
                 className="px-5 py-4 m-2 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             >
-                <h2 className={`mb-3 text-2xl font-semibold`}>
-                    Shuffle{' '}
-                    <Image
-                        className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none dark:bg-white"
-                        src="/shuffle.svg"
-                        alt="shuffle"
-                        width={24}
-                        height={24}
-                        priority
-                    />
+                <h2
+                    className={`mb-3 text-2xl font-semibold sm:text-left text-center flex gap-2 items-center`}
+                >
+                    Shuffle <ShuffleIcon width={24} height={24} className="dark:fill-white" />
                 </h2>
                 <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Divide the players into two teams</p>
             </Link>

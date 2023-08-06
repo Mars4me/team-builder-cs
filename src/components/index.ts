@@ -1,3 +1,3 @@
-import CustomLink from './CustomLink';
+import CustomLink from '../UI/CustomLink';
 
 export { CustomLink };
