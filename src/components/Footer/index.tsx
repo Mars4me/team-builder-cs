@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
 import { MarsLogo } from '../MarsLogo';
 import { footerItems } from '@/data/constants';
-import NoSSRWrapper from '@/layout/NoSSRWrapper';
+import { NoSSRWrapperWithoutLoader } from '@/layout/NoSSRWrapper';
 
 export const Footer = () => {
     const panelLinks =
@@ -165,7 +165,7 @@ export const Footer = () => {
           Accordion/Disclosure panels for phones, hidden on large screens 
        
         */}
-                <NoSSRWrapper>
+                <NoSSRWrapperWithoutLoader>
                     <div className="flex flex-col py-4 sm:py-8 md:hidden">
                         <Disclosure>
                             <Disclosure.Button className="w-full flex justify-between items-center text-base text-left  dark:text-[#ABB3BF] dark:hover:text-gray-100 py-4 border-b  dark:border-gray-800">
@@ -280,7 +280,7 @@ export const Footer = () => {
                             </Disclosure.Panel>
                         </Disclosure>
                     </div>
-                </NoSSRWrapper>
+                </NoSSRWrapperWithoutLoader>
                 {/* 
           Final Bottom Section
         */}

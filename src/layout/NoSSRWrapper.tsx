@@ -8,3 +8,7 @@ export default dynamic(() => Promise.resolve(NoSSRWrapper), {
     loading: () => <LoadingSceleton />,
     ssr: false,
 });
+
+export const NoSSRWrapperWithoutLoader = dynamic(() => Promise.resolve(NoSSRWrapper), {
+    ssr: false,
+});

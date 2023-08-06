@@ -1,12 +1,10 @@
 'use client';
 
-import CustomeSvgIcon from '@/UI/CustomeSvgIcon';
 import ShuffleIcon from '@/UI/ShuffleIcon';
 import { LocalStorageService } from '@/utils/localStorage';
 import { teamShuffler } from '@/utils/teamShuffler';
 import Link from 'next/link';
 import { useState, FormEvent, useMemo } from 'react';
-import svgIcon from '../../public/shuffle.svg';
 
 const mockPlayerList: Array<string> = [
     'Артур',
@@ -89,12 +87,6 @@ export default function BuilderPage() {
                     className={`mb-3 text-2xl font-semibold sm:text-left text-center flex gap-2 items-center`}
                 >
                     Shuffle <ShuffleIcon width={24} height={24} className="dark:fill-white" />{' '}
-                    <CustomeSvgIcon
-                        width={24}
-                        height={24}
-                        className="dark:fill-white"
-                        ComponentSVG={svgIcon}
-                    />
                 </h2>
                 <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Divide the players into two teams</p>
             </Link>
