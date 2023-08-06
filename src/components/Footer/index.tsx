@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Disclosure } from '@headlessui/react';
 import { MarsLogo } from '../MarsLogo';
 import { footerItems } from '@/data/constants';
+import NoSSRWrapper from '@/layout/NoSSRWrapper';
 
 export const Footer = () => {
     const panelLinks =
@@ -17,7 +18,7 @@ export const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <div className="mt-4 flex items-center justify-center w-full px-4  dark:bg-[#09101F] md:pt-12 border-t dark:border-gray-200 border-gray-800">
+        <div className="flex items-center justify-center w-full px-4 mt-4 border-t border-gray-800 md:pt-12 dark:border-gray-200">
             <div className="container px-4 mx-auto">
                 {/* 
           Main Grid on Larger Screens, hidden on small screens
@@ -162,109 +163,124 @@ export const Footer = () => {
 
                 {/* 
           Accordion/Disclosure panels for phones, hidden on large screens 
+       
         */}
-                <div className="flex flex-col py-4 sm:py-8 md:hidden">
-                    <Disclosure>
-                        <Disclosure.Button className="w-full flex justify-between items-center text-base text-left  dark:text-[#ABB3BF] dark:hover:text-gray-100 py-4 border-b  dark:border-gray-800">
-                            <h4>Resources</h4>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth="2"
-                                stroke="currentColor"
-                                aria-hidden="true"
-                                className="w-5 h-5 ui-open:transform ui-open:rotate-90"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </Disclosure.Button>
-                        <Disclosure.Panel as="ul" className="flex flex-col py-4 pl-4 space-y-4">
-                            {footerItems.resources.map((item, index) => {
-                                return item.internal ? (
-                                    <li className={panelLinks} key={`${index}`}>
-                                        <Disclosure.Button as={Link} href={item.path}>
-                                            {item.name}
-                                        </Disclosure.Button>
-                                    </li>
-                                ) : (
-                                    <li className={panelLinks} key={`${index}`}>
-                                        <Disclosure.Button>
-                                            <a href={item.path}>{item.name}</a>
-                                        </Disclosure.Button>
-                                    </li>
-                                );
-                            })}
-                        </Disclosure.Panel>
-                    </Disclosure>
-                    <Disclosure>
-                        <Disclosure.Button className="w-full flex justify-between items-center text-base text-left  dark:text-[#ABB3BF] dark:hover:text-gray-100 py-4 border-b  dark:border-gray-800">
-                            <h4>Company</h4>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth="2"
-                                stroke="currentColor"
-                                aria-hidden="true"
-                                className="w-5 h-5 ui-open:transform ui-open:rotate-90"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </Disclosure.Button>
-                        <Disclosure.Panel as="ul" className="flex flex-col py-4 pl-4 space-y-4">
-                            {footerItems.app.map((item, index) => {
-                                return item.internal ? (
-                                    <li className={panelLinks} key={`${index}`}>
-                                        <Disclosure.Button as={Link} href={item.path}>
-                                            {item.name}
-                                        </Disclosure.Button>
-                                    </li>
-                                ) : (
-                                    <li className={panelLinks} key={`${index}`}>
-                                        <Disclosure.Button>
-                                            <a href={item.path}>{item.name}</a>
-                                        </Disclosure.Button>
-                                    </li>
-                                );
-                            })}
-                        </Disclosure.Panel>
-                    </Disclosure>
+                <NoSSRWrapper>
+                    <div className="flex flex-col py-4 sm:py-8 md:hidden">
+                        <Disclosure>
+                            <Disclosure.Button className="w-full flex justify-between items-center text-base text-left  dark:text-[#ABB3BF] dark:hover:text-gray-100 py-4 border-b  dark:border-gray-800">
+                                <h4>Resources</h4>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    className="w-5 h-5 ui-open:transform ui-open:rotate-90"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M9 5l7 7-7 7"
+                                    ></path>
+                                </svg>
+                            </Disclosure.Button>
+                            <Disclosure.Panel as="ul" className="flex flex-col py-4 pl-4 space-y-4">
+                                {footerItems.resources.map((item, index) => {
+                                    return item.internal ? (
+                                        <li className={panelLinks} key={`${index}`}>
+                                            <Disclosure.Button as={Link} href={item.path}>
+                                                {item.name}
+                                            </Disclosure.Button>
+                                        </li>
+                                    ) : (
+                                        <li className={panelLinks} key={`${index}`}>
+                                            <Disclosure.Button>
+                                                <a href={item.path}>{item.name}</a>
+                                            </Disclosure.Button>
+                                        </li>
+                                    );
+                                })}
+                            </Disclosure.Panel>
+                        </Disclosure>
+                        <Disclosure>
+                            <Disclosure.Button className="w-full flex justify-between items-center text-base text-left  dark:text-[#ABB3BF] dark:hover:text-gray-100 py-4 border-b  dark:border-gray-800">
+                                <h4>Company</h4>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    className="w-5 h-5 ui-open:transform ui-open:rotate-90"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M9 5l7 7-7 7"
+                                    ></path>
+                                </svg>
+                            </Disclosure.Button>
+                            <Disclosure.Panel as="ul" className="flex flex-col py-4 pl-4 space-y-4">
+                                {footerItems.app.map((item, index) => {
+                                    return item.internal ? (
+                                        <li className={panelLinks} key={`${index}`}>
+                                            <Disclosure.Button as={Link} href={item.path}>
+                                                {item.name}
+                                            </Disclosure.Button>
+                                        </li>
+                                    ) : (
+                                        <li className={panelLinks} key={`${index}`}>
+                                            <Disclosure.Button>
+                                                <a href={item.path}>{item.name}</a>
+                                            </Disclosure.Button>
+                                        </li>
+                                    );
+                                })}
+                            </Disclosure.Panel>
+                        </Disclosure>
 
-                    <Disclosure>
-                        <Disclosure.Button className="w-full flex justify-between items-center text-base text-left  dark:text-[#ABB3BF] dark:hover:text-gray-100 py-4 border-b  dark:border-gray-800">
-                            <h4>Legal</h4>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth="2"
-                                stroke="currentColor"
-                                aria-hidden="true"
-                                className="w-5 h-5 ui-open:transform ui-open:rotate-90"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </Disclosure.Button>
-                        <Disclosure.Panel as="ul" className="flex flex-col py-4 pl-4 space-y-4">
-                            {footerItems.legal.map((item, index) => {
-                                return item.internal ? (
-                                    <li className={panelLinks} key={`${index}`}>
-                                        <Disclosure.Button as={Link} href={item.path}>
-                                            {item.name}
-                                        </Disclosure.Button>
-                                    </li>
-                                ) : (
-                                    <li className={panelLinks} key={`${index}`}>
-                                        <Disclosure.Button>
-                                            <a href={item.path}>{item.name}</a>
-                                        </Disclosure.Button>
-                                    </li>
-                                );
-                            })}
-                        </Disclosure.Panel>
-                    </Disclosure>
-                </div>
+                        <Disclosure>
+                            <Disclosure.Button className="w-full flex justify-between items-center text-base text-left  dark:text-[#ABB3BF] dark:hover:text-gray-100 py-4 border-b  dark:border-gray-800">
+                                <h4>Legal</h4>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    className="w-5 h-5 ui-open:transform ui-open:rotate-90"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M9 5l7 7-7 7"
+                                    ></path>
+                                </svg>
+                            </Disclosure.Button>
+                            <Disclosure.Panel as="ul" className="flex flex-col py-4 pl-4 space-y-4">
+                                {footerItems.legal.map((item, index) => {
+                                    return item.internal ? (
+                                        <li className={panelLinks} key={`${index}`}>
+                                            <Disclosure.Button as={Link} href={item.path}>
+                                                {item.name}
+                                            </Disclosure.Button>
+                                        </li>
+                                    ) : (
+                                        <li className={panelLinks} key={`${index}`}>
+                                            <Disclosure.Button>
+                                                <a href={item.path}>{item.name}</a>
+                                            </Disclosure.Button>
+                                        </li>
+                                    );
+                                })}
+                            </Disclosure.Panel>
+                        </Disclosure>
+                    </div>
+                </NoSSRWrapper>
                 {/* 
           Final Bottom Section
         */}
