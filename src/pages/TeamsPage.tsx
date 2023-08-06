@@ -65,7 +65,7 @@ export default function Teams() {
             <div className="-z-10 absolute top-0 sm:top-[8%] left-0 sm:left-[35%] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] " />
 
             <section className="flex flex-col w-full gap-4 p-1 sm:w-fit drop-shadow-lg lg:gap-10">
-                <Stack className="rounded-lg">
+                <Stack>
                     {teams[0].map((playerName, index) => (
                         <StackItem
                             key={playerName + index}
@@ -76,7 +76,7 @@ export default function Teams() {
                     ))}
                 </Stack>
 
-                <Stack className="rounded-lg">
+                <Stack>
                     {teams[1].map((playerName, index) => (
                         <StackItem
                             key={playerName + index}

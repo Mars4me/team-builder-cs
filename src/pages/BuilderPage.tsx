@@ -2,6 +2,7 @@
 
 import ShuffleIcon from '@/UI/ShuffleIcon';
 import Stack from '@/UI/Stack';
+import { StackItem } from '@/UI/Stack/StackItem';
 import { LocalStorageService } from '@/utils/localStorage';
 import { teamShuffler } from '@/utils/teamShuffler';
 import { useRouter } from 'next/navigation';
@@ -70,13 +71,12 @@ export default function BuilderPage() {
 
             <Stack>
                 {playerList.map((player, index) => (
-                    <button
-                        className="px-5 py-4 transition-colors border border-transparent rounded-lg cursor-pointer group hover:border-gray-300 hover:bg-red-100 hover:dark:border-neutral-700 hover:dark:bg-red-800/30"
-                        key={player + index}
+                    <StackItem
+                        key={player + ' ' + index}
+                        playerName={player}
+                        index={index}
                         onClick={() => handleDeletePlayer(player)}
-                    >
-                        {player}
-                    </button>
+                    />
                 ))}
             </Stack>
 
