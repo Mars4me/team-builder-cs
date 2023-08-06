@@ -1,11 +1,8 @@
-import Link from 'next/link';
-import { ReactNode } from 'react';
+import Link, { LinkProps } from 'next/link';
 
-interface CustomeLinkProps {
-    children?: ReactNode;
+interface CustomeLinkProps extends LinkProps {
     title: string;
     description: string;
-    href: string;
 }
 
 const CustomLink = ({ href, title, description }: CustomeLinkProps) => {

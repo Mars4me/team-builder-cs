@@ -3,7 +3,7 @@
 import ShuffleIcon from '@/UI/ShuffleIcon';
 import { LocalStorageService } from '@/utils/localStorage';
 import { teamShuffler } from '@/utils/teamShuffler';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState, FormEvent, useMemo } from 'react';
 
 const mockPlayerList: Array<string> = [
@@ -26,8 +26,8 @@ export default function BuilderPage() {
         LocalStorageService.initPlayers()[0] ? LocalStorageService.initPlayers() : mockPlayerList
     );
     const [value, setValue] = useState('');
-
     const playersCounter = useMemo(() => playerList.length, [playerList]);
+    const router = useRouter();
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -50,6 +50,7 @@ export default function BuilderPage() {
 
     const handleShuffle = () => {
         LocalStorageService.setTeams(teamShuffler(playerList));
+        router.push('teams');
     };
     return (
         <>
@@ -78,9 +79,8 @@ export default function BuilderPage() {
                 ))}
             </div>
 
-            <Link
+            <button
                 onClick={handleShuffle}
-                href="/teams"
                 className="px-5 py-4 m-2 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             >
                 <h2
@@ -89,7 +89,7 @@ export default function BuilderPage() {
                     Shuffle <ShuffleIcon width={24} height={24} className="dark:fill-white" />{' '}
                 </h2>
                 <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Divide the players into two teams</p>
-            </Link>
+            </button>
         </>
     );
 }
