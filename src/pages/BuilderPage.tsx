@@ -50,7 +50,7 @@ export default function BuilderPage() {
     return (
         <>
             <form className="justify-between block w-full p-2 sm:flex sm:p-10" onSubmit={handleSubmit}>
-                <h2 className="mx-2 my-4 text-4xl text-center sm:text-left">Players - {playersCounter} </h2>
+                <h2 className="mx-2 my-4 text-4xl text-center">Players - {playersCounter} </h2>
                 <input
                     type="text"
                     placeholder="add new player"
@@ -82,7 +82,7 @@ export default function BuilderPage() {
                 <h2 className={`mb-3 text-2xl font-semibold`}>
                     Shuffle{' '}
                     <Image
-                        className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none"
+                        className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none dark:bg-white"
                         src="/shuffle.svg"
                         alt="shuffle"
                         width={24}
