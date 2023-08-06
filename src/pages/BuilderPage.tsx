@@ -1,6 +1,7 @@
 'use client';
 
 import ShuffleIcon from '@/UI/ShuffleIcon';
+import Stack from '@/UI/Stack';
 import { LocalStorageService } from '@/utils/localStorage';
 import { teamShuffler } from '@/utils/teamShuffler';
 import { useRouter } from 'next/navigation';
@@ -67,7 +68,7 @@ export default function BuilderPage() {
 
             <div className="-z-10 absolute top-0 sm:top-[8%] left-0 sm:left-[35%] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] " />
 
-            <div className="grid w-full pt-8 pb-6 mt-4 text-center border-gray-300 md:mt-0 lg:mb-0 sm:w-fit sm:grid-cols-3 lg:grid-cols-5 lg:text-left bg-gradient-to-b dark:shadow-inner dark:shadow-purple-900 from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+            <Stack>
                 {playerList.map((player, index) => (
                     <button
                         className="px-5 py-4 transition-colors border border-transparent rounded-lg cursor-pointer group hover:border-gray-300 hover:bg-red-100 hover:dark:border-neutral-700 hover:dark:bg-red-800/30"
@@ -77,7 +78,7 @@ export default function BuilderPage() {
                         {player}
                     </button>
                 ))}
-            </div>
+            </Stack>
 
             <button
                 onClick={handleShuffle}

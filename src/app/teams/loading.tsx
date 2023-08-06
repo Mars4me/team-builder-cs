@@ -1,4 +1,4 @@
-import LoadingSceleton from '@/components/LoadingSceleton';
+import LoadingSceleton from '@/components/LoadingSkeleton';
 
 export default function Loading() {
     return <LoadingSceleton />;

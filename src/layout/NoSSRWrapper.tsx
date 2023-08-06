@@ -1,4 +1,4 @@
-import LoadingSceleton from '@/components/LoadingSceleton';
+import LoadingSceleton from '@/components/LoadingSkeleton';
 import dynamic from 'next/dynamic';
 import React, { ReactNode } from 'react';
 

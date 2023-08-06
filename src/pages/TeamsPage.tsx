@@ -4,6 +4,7 @@ import { CustomLink } from '@/components';
 import React, { useEffect, useState } from 'react';
 import { LocalStorageService } from '@/utils/localStorage';
 import { changePlayerInTeam, copyToClipboard, teamShuffler } from '@/utils/teamShuffler';
+import Stack from '@/UI/Stack';
 
 export default function Teams() {
     const [teams, setTeams] = useState<[string[], string[]]>(() => LocalStorageService.initTeams());
@@ -63,7 +64,7 @@ export default function Teams() {
             <div className="-z-10 absolute top-0 sm:top-[8%] left-0 sm:left-[35%] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] " />
 
             <section className="flex flex-col w-full gap-4 p-1 sm:w-fit drop-shadow-lg lg:gap-10">
-                <div className="grid w-full row-auto text-center rounded-lg shadow-md dark:shadow-inner dark:shadow-purple-900 sm:pt-8 sm:pb-6 sm:grid-cols-2 lg:grid-cols-5 bg-gradient-to-b from-zinc-300 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+                <Stack className="rounded-lg">
                     {teams[0].map((playerName, index) => (
                         <button
                             onClick={() => handlePlayerShuffle(playerName)}
@@ -73,9 +74,9 @@ export default function Teams() {
                             {playerName}
                         </button>
                     ))}
-                </div>
+                </Stack>
 
-                <div className="grid w-full row-auto text-center rounded-lg shadow-md dark:shadow-inner dark:shadow-purple-900 sm:pt-8 sm:pb-6 sm:grid-cols-2 lg:grid-cols-5 bg-gradient-to-b from-zinc-300 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
+                <Stack className="rounded-lg">
                     {teams[1].map((playerName, index) => (
                         <button
                             onClick={() => handlePlayerShuffle(playerName)}
@@ -85,7 +86,7 @@ export default function Teams() {
                             {playerName}
                         </button>
                     ))}
-                </div>
+                </Stack>
             </section>
 
             {showNotification && (
