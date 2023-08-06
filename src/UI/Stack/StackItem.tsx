@@ -8,7 +8,6 @@ interface StackItemProps extends DOMAttributes<HTMLButtonElement> {
 }
 
 export const StackItem = ({ playerName, index, className = '', ...props }: StackItemProps) => {
-    console.log(props);
     return (
         <button
             {...props}
