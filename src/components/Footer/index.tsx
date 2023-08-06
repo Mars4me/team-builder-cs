@@ -297,7 +297,7 @@ export const Footer = () => {
                             <ul className="flex items-start justify-center space-x-4 text-sm md:flex-col md:space-x-0 md:space-y-3 ">
                                 <li>
                                     <a
-                                        href=""
+                                        href="https://www.linkedin.com/in/mars4me/"
                                         className={logoLinks}
                                         target="_blank"
                                         rel="noreferrer"
