@@ -37,7 +37,9 @@ export default function BuilderPage() {
             return;
         }
 
-        const newPlayerList = playerList.concat(value);
+        const prepearedString = value.length >= 35 ? value.slice(0, 35) + '...' : value;
+
+        const newPlayerList = playerList.concat(prepearedString);
 
         setPlayerList(newPlayerList);
         LocalStorageService.setPlayers(newPlayerList);
@@ -56,12 +58,12 @@ export default function BuilderPage() {
     };
     return (
         <>
-            <form className="justify-between block w-full p-2 sm:flex sm:p-10" onSubmit={handleSubmit}>
+            <form className="justify-between block w-full p-4 sm:flex sm:p-10" onSubmit={handleSubmit}>
                 <h2 className="mx-2 my-4 text-4xl text-center">Players - {playersCounter} </h2>
                 <input
                     type="text"
                     placeholder="add new player"
-                    className="w-full p-2 text-2xl bg-white border border-transparent rounded-lg dark:text-white md:p-4 md:w-fit dark:bg-transparent hover:bg-neutral-500 animate-pulse animate-delay-1000 animate"
+                    className="w-full p-4 text-2xl bg-white border border-transparent rounded-lg dark:text-white sm:w-fit dark:bg-transparent hover:bg-cyan-100 hover:dark:bg-neutral-800/30 animate-pulse animate-delay-1000 animate focus:dark:bg-neutral-800/30"
                     value={value}
                     onChange={(event) => setValue(event?.target.value)}
                 />
@@ -85,7 +87,7 @@ export default function BuilderPage() {
                 className="px-5 py-4 m-2 transition-colors border border-transparent rounded-lg group hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             >
                 <h2
-                    className={`mb-3 text-2xl font-semibold sm:text-left text-center flex gap-2 items-center`}
+                    className={`mb-3 text-2xl font-semibold flex gap-2 items-center justify-center sm:justify-normal`}
                 >
                     Shuffle <ShuffleIcon width={24} height={24} className="dark:fill-white" />{' '}
                 </h2>

@@ -14,7 +14,7 @@ export const StackItem = ({ playerName, index, className = '', ...props }: Stack
         <button
             {...props}
             className={cn(
-                'px-5 py-4 text-center border border-transparent rounded-lg cursor-pointer hover:border-gray-300 hover:bg-red-100 hover:dark:border-neutral-700 hover:dark:bg-red-800/30',
+                'px-5 py-4 break-words text-center border-slate-100 border-2 rounded-lg cursor-pointer hover:border-gray-300 hover:bg-red-100 hover:dark:border-neutral-700 hover:dark:bg-red-800/30',
                 className
             )}
             key={playerName + index}

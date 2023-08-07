@@ -13,7 +13,11 @@ const ShuffleIcon = ({ width, height, viewBox, className }: ShuffleIconProps) =>
             fill={'#000000'}
             width={width}
             height={height}
-            className={className}
+            className={
+                className +
+                ' ' +
+                'transition-transform group-hover:translate-x-1 motion-reduce:transform-none'
+            }
             viewBox={viewBox || '0 0 49.7 49.7'}
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"

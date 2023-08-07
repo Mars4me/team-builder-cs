@@ -56,7 +56,7 @@ export default function Teams() {
     return (
         <>
             <button
-                className="px-24 py-4 my-5 text-2xl font-semibold border rounded-lg hover:bg-slate-200 hover:border-gray-200 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-200"
+                className="px-24 py-4 my-4 text-2xl font-semibold border rounded-lg sm:my-10 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 hover:bg-slate-200 hover:border-gray-200 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-200"
                 onClick={handleCopyToCb}
             >
                 Copy
@@ -64,7 +64,7 @@ export default function Teams() {
 
             <div className="-z-10 absolute top-0 sm:top-[8%] left-0 sm:left-[35%] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] " />
 
-            <section className="flex flex-col w-full gap-4 p-1 sm:w-fit drop-shadow-lg lg:gap-10">
+            <section className="flex flex-col w-full gap-10 p-1 sm:gap-2 sm:w-fit drop-shadow-lg lg:gap-4 sm:mb-6">
                 <Stack>
                     {teams[0].map((playerName, index) => (
                         <StackItem
