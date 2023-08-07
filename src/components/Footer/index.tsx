@@ -286,7 +286,9 @@ export const Footer = () => {
         */}
                 <div className="flex flex-col flex-wrap items-center justify-between pb-4 space-y-6 md:pt-4 md:space-y-0 md:flex-row md:border-t md:dark:border-gray-800">
                     <div className="block md:hidden">
-                        <MarsLogo width={82} height={82} viewBox="0 0 400 400" />
+                        <Link href="/">
+                            <MarsLogo width={82} height={82} viewBox="0 0 400 400" />
+                        </Link>
                     </div>
 
                     <div className="flex flex-col space-y-6 md:space-y-0">
