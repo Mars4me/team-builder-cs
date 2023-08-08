@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { ThemeToggle } from '../ThemeToggle';
 
 export const Header = () => {
     return (
