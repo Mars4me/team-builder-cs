@@ -1,4 +1,5 @@
 import { CustomLink } from '@/components';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import Image from 'next/image';
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
                     priority
                 />
             </div>
+
+            <ThemeToggle />
 
             <div className="-z-10 absolute top-0 sm:top-[20%] left-0 sm:left-[35%] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]"></div>
 

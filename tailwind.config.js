@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'class',
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
         './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -17,5 +18,5 @@ module.exports = {
             },
         },
     },
-    plugins: [require('tailwindcss-animated')],
+    plugins: [require('tailwindcss-animated'), require('@headlessui/tailwindcss')],
 };
