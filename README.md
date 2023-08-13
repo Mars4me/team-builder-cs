@@ -2,6 +2,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## team builder
 
-[Team builder](https://team-builder-psi.vercel.app/) 
+[Team builder](https://team-builder-cspsi.vercel.app/) 
 
 
