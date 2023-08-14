@@ -1,6 +1,7 @@
 {
-    "name": "test-project",
-    "version": "0.1.0",
+    "name": "cs-go-team-builder",
+    "author": "Mars4me",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "dev": "next dev",
