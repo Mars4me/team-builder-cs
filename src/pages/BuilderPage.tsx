@@ -91,7 +91,7 @@ export default function BuilderPage() {
                 >
                     Shuffle <ShuffleIcon width={24} height={24} className="dark:fill-white" />{' '}
                 </h2>
-                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Divide the players into two teams</p>
+                <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Divide players into two teams</p>
             </button>
         </>
     );
